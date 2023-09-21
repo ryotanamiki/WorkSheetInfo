@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>アンケートフォーム</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>アンケートフォーム</h1>
+    <% if (error) { %>
+        <p class="error">
+            <%= error %>
+        </p>
+        <% } %>
+            <form action="/submit" method="post">
+                <label for="name">名前<span class="required">*</span></label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="kana">かな<span class="required">*</span></label>
+                <input type="text" id="kana" name="kana" required><br>
+
+                <label>性別<span class="required">*</span></label><br>
+                <input type="radio" id="male" name="gender" value="男" required>
+                <label for="male">男</label>
+                <input type="radio" id="female" name="gender" value="女" required>
+                <label for="female">女</label><br>
+
+                <label for="email">email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="address">お住まいの住所<span class="required">*</span></label>
+                <input type="text" id="address" name="address" required><br>
+
+                <label for="phone">電話番号<span class="required">*</span></label>
+                <input type="text" id="phone" name="phone" required><br>
+
+                <label>当サイトを知った内容</label><br>
+                <input type="checkbox" id="ad" name="source" value="広告で知った">
+                <label for="ad">広告で知った</label>
+                <input type="checkbox" id="website" name="source" value="サイトを見た">
+                <label for="website">サイトを見た</label>
+                <input type="checkbox" id="friend" name="source" value="知人から教えてもらった">
+                <label for="friend">知人から教えてもらった</label>
+                <input type="checkbox" id="youtube" name="source" value="youtubeの広告を見た">
+                <label for="youtube">youtubeの広告を見た</label><br>
+
+                <label for="inquiry">問い合わせ内容</label><br>
+                <textarea id="inquiry" name="inquiry"></textarea><br>
+
+                <input type="submit" value="送信">
+            </form>
+</body>
+
+</html>
